@@ -71,16 +71,20 @@ def recognize_emotion():
     
     mp = Dispatch("WMPlayer.OCX")
     if pred == 0:
-        tune = mp.newMedia("I:/EMP/angry1.mp3")
+        tune = mp.newMedia("path of / the / song /angry.mp3")
+        print("Angry song is playing.")
     elif pred == 1:
-        tune = mp.newMedia("I:/EMP/happy1.mp3")
+        tune = mp.newMedia("path of / the / song /happy.mp3")
         print("Happy song is playing.")
     elif pred == 2:
-        tune = mp.newMedia("I:/EMP/sad1.mp3")
+        tune = mp.newMedia("path of / the / song /sad.mp3")
+        print("Sad song is playing.")
     elif pred == 3:
-        tune = mp.newMedia("I:/EMP/nuetral1.mp3")
+        tune = mp.newMedia("path of / the / song /nuetral.mp3")
+        print("Nuetral song is playing.")
     elif pred == 4:
-        tune = mp.newMedia("I:/EMP/surprise1.mp3")
+        tune = mp.newMedia("path of / the / song /surprise.mp3")
+        print("Surprise song is playing.")
 
     mp.currentPlaylist.appendItem(tune)
     mp.controls.play()
