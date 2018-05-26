@@ -1,0 +1,70 @@
+char data;
+char green=0;
+char red=1;
+char blue=2;
+int ledPin1 = 11;
+int ledPin2 = 12;
+int ledPin3 = 13;
+void setup() {
+  Serial.begin(9600); //initialize serial COM at 9600 baudrate
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+  digitalWrite(ledPin1, LOW);
+  digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin3, LOW);
+
+//  Serial.println(" Hi!, I am Arduino ");
+
+}
+
+void loop() {
+  //digitalWrite(ledPin1, LOW);
+  //digitalWrite(ledPin2, LOW);
+  //digitalWrite(ledPin3, LOW);
+  while (Serial.available()) {
+  
+
+   char data =(char) Serial.read();
+    Serial.print(data);
+  if (data =='0' )
+  {
+   digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin3, LOW);
+    digitalWrite (ledPin1, HIGH);
+  }
+
+  else if (data =='1')
+  {
+  digitalWrite(ledPin1, LOW);
+  digitalWrite(ledPin3, LOW);
+    digitalWrite (ledPin2, HIGH);
+  }
+
+  else if (data == '2')
+  {
+    digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin1, LOW);
+    digitalWrite (ledPin3, HIGH);
+  }
+
+  else if (data == '3')
+  {
+    digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin1, LOW);
+    digitalWrite (ledPin3, HIGH);
+  }
+  else if (data == '4')
+  {
+    digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin1, LOW);
+    digitalWrite (ledPin3, HIGH);
+  }
+  else if (data == '5')
+  {
+    digitalWrite(ledPin2, LOW);
+  digitalWrite(ledPin1, LOW);
+    digitalWrite (ledPin3, HIGH);
+  }
+  }
+  }
